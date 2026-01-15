@@ -18,8 +18,14 @@ class Account:
             self.__balance-=amount
             print(f"Money in Account after withdrawal is: {self.__balance}")
     
-def get_balance(self):
-        return self.__balance
+    def get_balance(self):
+            return self.__balance
+        
+    def set_balance(self,amount):
+            if amount<0:
+                print("Balance cannot be negative")
+            else:
+                self.__balance=amount
     
 d1=Account("Dev",5000)
 d1.deposit(2000)    
@@ -34,3 +40,6 @@ d2.withdraw(3000)
 print(f"Available balance is: {d2.get_balance()}")
 d2.withdraw(15000)
     
+
+
+d2.set_balance(8000)

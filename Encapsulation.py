@@ -42,4 +42,4 @@ d2.withdraw(15000)
     
 
 
-d2.set_balance(8000)
+d2.set_balance(5000)

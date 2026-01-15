@@ -36,7 +36,22 @@ class SavingsAccount(Account):
 
 
     
+
+
+class CheckingAccount(Account):
+    print("CheckingAccount __init__ called")
+    def __init__(self, name, balance):
+        super().__init__(name, balance)
+        self.transaction_fee = 2.0
+
+    def withdraw(self, amount):
+        total_amount = amount + self.transaction_fee
+        print(f"Total amount to withdraw including transaction fee is: {total_amount}")
+        super().withdraw(total_amount)  
+
 d1=SavingsAccount("Dev",5000)
 
 d1.add_interest()
 print(f"Available balance after adding interest is: {d1.get_balance()}")
+d2=CheckingAccount("Dev",3000)
+d2.withdraw(500)
